@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Deploy Infrastructure</h2>
+  <form method="post">
+    <div class="mb-3">
+      <label for="user_request" class="form-label">Describe your infrastructure needs:</label>
+      <textarea class="form-control" id="user_request" name="user_request" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Configurations</button>
+  </form>
+
+  <form action="{{ url_for('apply_newest') }}" method="post" style="margin-top: 20px;">
+    <button type="submit" class="btn btn-primary">Apply Newest Terraform</button>
+  </form>
+
+  <!-- NEW: Red button to destroy Terraform resources -->
+  <form action="{{ url_for('destroy') }}" method="post" style="margin-top: 20px;">
+    <button type="submit" class="btn btn-danger">Destroy Terraform</button>
+  </form>
+
+  {% if terraform and ansible %}
+    <hr>
+    <h3>Generated Terraform Configuration</h3>
+    <pre>{{ terraform }}</pre>
+    <p>Saved as: {{ tf_file }}</p>
+
+    <h3>Generated Ansible Playbook</h3>
+    <pre>{{ ansible }}</pre>
+    <p>Saved as: {{ ansible_file }}</p>
+  {% endif %}
+{% endblock %}

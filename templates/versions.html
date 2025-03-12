@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Version History</h2>
+  <h3>Terraform Versions</h3>
+  <ul>
+    {% for version in tf_versions %}
+      <li>{{ version }}</li>
+    {% endfor %}
+  </ul>
+  <h3>Ansible Versions</h3>
+  <ul>
+    {% for version in ansible_versions %}
+      <li>{{ version }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

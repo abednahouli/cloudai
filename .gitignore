@@ -1,0 +1,48 @@
+# Byte-compiled files and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution/packaging
+env/
+venv/
+ENV/
+.Python/
+.env
+
+# Installer logs and build directories
+pip-log.txt
+pip-delete-this-directory.txt
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Terraform and Ansible versioning folders
+terraform_versions/
+ansible_versions/
+main.tf
+credentials.json
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+
+# Log files
+*.log

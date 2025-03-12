@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Welcome to the AI Cloud MVP</h1>
+  {% if credentials_set %}
+    <p>Your credentials are set. You can now deploy infrastructure, troubleshoot issues, or view version history.</p>
+  {% else %}
+    <p>You haven't set your credentials yet. <a href="{{ url_for('credentials') }}">Set credentials here.</a></p>
+  {% endif %}
+{% endblock %}

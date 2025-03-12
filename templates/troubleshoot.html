@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Troubleshoot</h2>
+  <form method="post">
+    <div class="mb-3">
+      <label for="log_text" class="form-label">Enter log text for troubleshooting:</label>
+      <textarea class="form-control" id="log_text" name="log_text" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Analyze Logs</button>
+  </form>
+
+  {% if analysis %}
+    <hr>
+    <h3>Troubleshooting Analysis</h3>
+    <pre>{{ analysis }}</pre>
+  {% endif %}
+{% endblock %}

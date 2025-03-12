@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Restore Previous Version</h2>
+  <form method="post">
+    <div class="mb-3">
+      <label for="file_type" class="form-label">Select file type:</label>
+      <select class="form-select" id="file_type" name="file_type">
+        <option value="terraform">Terraform</option>
+        <option value="ansible">Ansible</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="index" class="form-label">Enter version index (starting at 0):</label>
+      <input type="number" class="form-control" id="index" name="index" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Restore</button>
+  </form>
+
+  {% if content %}
+    <hr>
+    <h3>Restored Version: {{ version_name }}</h3>
+    <pre>{{ content }}</pre>
+  {% endif %}
+{% endblock %}
